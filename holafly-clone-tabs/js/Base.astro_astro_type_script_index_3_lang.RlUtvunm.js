@@ -1,0 +1,1 @@
+import{i}from"./settingsStore.BmsiWLAp.js";import"./consts.BBeVVN35.js";import"./geolocation.DcqzTHnl.js";import"./i18n.Cms4_8pR.js";import"./logger.Dp7A2KxE.js";import"./_commonjsHelpers.Cpj98o6Y.js";import"./buildPath.Dm-cTGCe.js";import"./index.C7BV1ZGy.js";function t(){i()}t();
