@@ -1,2 +1,0 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["_astro/getLocationForIreland.BjlLWHI2.js","_astro/geolocation.DcqzTHnl.js","_astro/consts.BBeVVN35.js","_astro/i18n.Cms4_8pR.js","_astro/logger.Dp7A2KxE.js","_astro/_commonjsHelpers.Cpj98o6Y.js","_astro/buildPath.Dm-cTGCe.js"])))=>i.map(i=>d[i]);
-import{_ as o}from"./preload-helper.BlTxHScW.js";o(async()=>{const{getLocationforireland:t}=await import("./getLocationForIreland.BjlLWHI2.js");return{getLocationforireland:t}},__vite__mapDeps([0,1,2,3,4,5,6])).then(({getLocationforireland:t})=>{t()});

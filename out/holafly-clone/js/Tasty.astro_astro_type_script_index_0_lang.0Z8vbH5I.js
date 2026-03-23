@@ -1,1 +1,0 @@
-import{s as e,I as o}from"./integrationControls.C7y5Qvit.js";const c=typeof location<"u"?location.search:"",s=/(?:\?|&|^)utm_source=(facebook|tiktok)(?:&|$)/i;if(e(o.TASTY)&&!s.test(c)){const t=document.createElement("script");t.src="https://try.abtasty.com/458c84d9d93d4597983e7b44471672dc.js",t.async=!0,document.head.appendChild(t)}
