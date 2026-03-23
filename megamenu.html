@@ -220,25 +220,34 @@
     </div>
 </div>
 
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+(function() {
     var menu = document.getElementById('megaMenuContainer');
     var overlay = document.getElementById('megaMenuDarkOverlay');
     var closeBtn = document.getElementById('close_megamenu');
     
     function openMenu(e) {
         if(e) e.preventDefault();
-        menu.style.display = 'block';
-        overlay.style.display = 'block';
+        if(menu) menu.style.display = 'block';
+        if(overlay) overlay.style.display = 'block';
     }
     
     function closeMenu() {
-        menu.style.display = 'none';
-        overlay.style.display = 'none';
+        if(menu) menu.style.display = 'none';
+        if(overlay) overlay.style.display = 'none';
     }
     
-    // Attach to Destinos links
-    var destinosLinks = document.querySelectorAll('li[data-attribute="megamenu"] a, a[title="¿A dónde viajas después?"]');
+    // Attach to ALL possible "Destinos" links
+    var destinosLinks = document.querySelectorAll('li[data-attribute="megamenu"] a, a[title="¿A dónde viajas después?"], .header__navbar-menu-item-link.has-chevron');
+    
+    // Also try to find the specific one if the selector missed it
+    document.querySelectorAll('.header__navbar-menu-item-link').forEach(function(el) {
+        if (el.textContent.includes('Destinos')) {
+            el.addEventListener('click', openMenu);
+        }
+    });
+
     destinosLinks.forEach(function(link) {
         link.addEventListener('click', openMenu);
     });
@@ -276,9 +285,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (btns['Popular'].btn) btns['Popular'].btn.addEventListener('click', function() { setActiveTab('Popular'); });
-    if (btns['Regional'].btn) btns['Regional'].btn.addEventListener('click', function() { setActiveTab('Regional'); });
-    if (btns['All'].btn) btns['All'].btn.addEventListener('click', function() { setActiveTab('All'); });
+    if (btns['Popular'].btn) btns['Popular'].btn.addEventListener('click', function(e) { e.preventDefault(); setActiveTab('Popular'); });
+    if (btns['Regional'].btn) btns['Regional'].btn.addEventListener('click', function(e) { e.preventDefault(); setActiveTab('Regional'); });
+    if (btns['All'].btn) btns['All'].btn.addEventListener('click', function(e) { e.preventDefault(); setActiveTab('All'); });
 
     // Search logic
     var searchInput = document.getElementById('searchInput-ylueg34');
@@ -288,29 +297,30 @@ document.addEventListener('DOMContentLoaded', function() {
     var megamenuContent = document.getElementById('megamenu-destinations__content');
 
     function handleSearch() {
+        if (!searchInput) return;
         var val = searchInput.value.trim();
         
         if (val.length > 0) {
-            clearSearchBtn.style.display = 'inline';
+            if(clearSearchBtn) clearSearchBtn.style.display = 'inline';
         } else {
-            clearSearchBtn.style.display = 'none';
+            if(clearSearchBtn) clearSearchBtn.style.display = 'none';
         }
 
         if (val.length === 0) {
             // Empty state -> show tabs
-            searchMinChars.style.display = 'none';
-            searchResultsContainer.style.display = 'none';
-            megamenuContent.style.display = 'block';
+            if(searchMinChars) searchMinChars.style.display = 'none';
+            if(searchResultsContainer) searchResultsContainer.style.display = 'none';
+            if(megamenuContent) megamenuContent.style.display = 'block';
         } else if (val.length > 0 && val.length < 3) {
             // Typing state (<3)
-            searchMinChars.style.display = 'block';
-            searchResultsContainer.style.display = 'none';
-            megamenuContent.style.display = 'none';
+            if(searchMinChars) searchMinChars.style.display = 'block';
+            if(searchResultsContainer) searchResultsContainer.style.display = 'none';
+            if(megamenuContent) megamenuContent.style.display = 'none';
         } else if (val.length >= 3) {
             // Results state
-            searchMinChars.style.display = 'none';
-            searchResultsContainer.style.display = 'block';
-            megamenuContent.style.display = 'none';
+            if(searchMinChars) searchMinChars.style.display = 'none';
+            if(searchResultsContainer) searchResultsContainer.style.display = 'block';
+            if(megamenuContent) megamenuContent.style.display = 'none';
         }
     }
 
@@ -319,13 +329,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if(clearSearchBtn) {
-        clearSearchBtn.addEventListener('click', function() {
+        clearSearchBtn.addEventListener('click', function(e) {
+            e.preventDefault();
             if(searchInput) {
                 searchInput.value = '';
                 handleSearch();
             }
         });
     }
+    
+    // Fallback: If there is an inline onclick="toggleMegaMenu()", define it globally
+    window.toggleMegaMenu = function(e) {
+        if(e) e.preventDefault();
+        openMenu(e);
+    };
 
-});
+})();
 </script>
