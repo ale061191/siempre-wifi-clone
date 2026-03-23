@@ -1,0 +1,331 @@
+<div id="megaMenuDarkOverlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.4) !important; z-index: 9990 !important; display: none;"></div>
+<div id="megaMenuContainer" class="megamenu-destinations hide-algolia-noresult is-homepage" data-megamenu-overlay="true" data-locale="es" style="display: none; position: fixed !important; z-index: 9999 !important; background: white; border-radius: 16px; box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); width: 850px; padding: 24px; left: 50% !important; transform: translateX(-50%) !important; top: 100px !important; font-family: system-ui, -apple-system, sans-serif;" bis_skin_checked="1">
+    
+    <div class="megamenu-destinations__header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;" bis_skin_checked="1">
+        <h2 style="margin: 0; font-size: 18px; font-weight: 500; color: #111;">Destinos</h2>
+        <div class="megamenu-destinations__close-icon" style="cursor: pointer; color: #555; padding: 4px;" bis_skin_checked="1">
+            <span id="close_megamenu" style="font-size: 16px;">✕</span>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-3" data-search-variant="gradient-border" bis_skin_checked="1" style="margin-bottom: 24px;">
+        <div class="relative" bis_skin_checked="1">
+            <div class="relative flex items-center gap-2 py-1 px-4 rounded-xl" bis_skin_checked="1" style="display: flex; align-items: center; border: 1px solid #e5e7eb; border-radius: 12px; padding: 6px 12px; transition: border-color 0.2s;">
+                <span class="volare-icon-travel-location text-2xl" style="margin-right: 8px; font-size: 20px; display: flex; align-items: center;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#555"/></svg>
+                </span>
+                <div style="width: 1px; height: 24px; background-color: #e5e7eb; margin-right: 12px;"></div>
+                <input type="text" id="searchInput-ylueg34" autocomplete="off" class="w-full outline-none" placeholder="¿A dónde viajas?" style="flex: 1; border: none; outline: none; font-size: 16px; color: #111; padding: 8px 0; background: transparent;">
+                
+                <span id="clearSearchBtn" style="display: none; cursor: pointer; color: #999; font-size: 18px; margin-right: 8px;">✕</span>
+
+                <button id="searchButton" type="button" style="background-color: #3EE17A; border: none; border-radius: 8px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; margin-left: 8px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z" fill="#111"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search States Containers -->
+    <div id="search-min-chars" style="display: none; background: #f9fafb; padding: 12px 16px; border-radius: 8px; font-size: 14px; color: #555; margin-bottom: 24px;">
+        Escribe al menos <strong>3 letras</strong> para comenzar tu búsqueda.
+    </div>
+
+    <div id="search-results-container" style="display: none; margin-bottom: 24px;">
+        <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; color: #999; margin-bottom: 12px; text-transform: uppercase;">
+            <span>Destinos</span>
+            <span>3 Resultados</span>
+        </div>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+            <li>
+                <a href="/es/esim-alemania/" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <img width="24" height="24" src="https://media.holafly.com/public/flags/DEU.svg" alt="Alemania" style="border-radius: 50%; border: 1px solid #f3f4f6;">
+                        <span style="font-size: 14px;">Alemania</span>
+                    </div>
+                    <span style="font-size: 12px; color: #999;">País</span>
+                </a>
+            </li>
+            <li>
+                <a href="/es/esim-europa/" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <img width="24" height="24" src="https://media.holafly.com/public/flags/EUR.svg" alt="Europa" style="border-radius: 50%; border: 1px solid #f3f4f6;">
+                        <span style="font-size: 14px;">Europa</span>
+                    </div>
+                    <span style="font-size: 12px; color: #999;">Región</span>
+                </a>
+            </li>
+            <li>
+                <a href="/es/esim-global/" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <img width="24" height="24" src="https://media.holafly.com/public/flags/GLO.svg" alt="Global" style="border-radius: 50%; border: 1px solid #f3f4f6;">
+                        <span style="font-size: 14px;">Global</span>
+                    </div>
+                    <span style="font-size: 12px; color: #999;">Global</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="megamenu-destinations__content" class="megamenu-destinations__content" bis_skin_checked="1">
+        <div class="megamenu-destinations__tabs-wrapper" bis_skin_checked="1">
+            <div class="megamenu-destinations__tabs" role="tablist" aria-label="Destination categories" bis_skin_checked="1" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 24px;">
+                <button id="btn-popular" type="button" aria-controls="tab-popular" aria-selected="true" class="active-tab" data-tab="Popular" style="background: #111; color: white; border: none; padding: 6px 16px; border-radius: 20px; font-weight: 500; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                    <span class="checkmark" style="font-size: 12px;">✔</span> <span class="tab-text">Popular</span>
+                </button>
+                <button id="btn-regional" type="button" aria-controls="tab-regional" aria-selected="false" data-tab="Regional" style="background: white; color: #555; border: 1px solid #e5e7eb; padding: 6px 16px; border-radius: 20px; font-weight: 400; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                    <span class="checkmark" style="font-size: 12px; display: none;">✔</span> <span class="tab-text">Planes regionales</span>
+                </button>
+                <button id="btn-all" type="button" aria-controls="tab-all" aria-selected="false" data-tab="All" style="background: white; color: #555; border: 1px solid #e5e7eb; padding: 6px 16px; border-radius: 20px; font-weight: 400; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                    <span class="checkmark" style="font-size: 12px; display: none;">✔</span> <span class="tab-text">Todos los destinos</span>
+                </button>
+            </div>
+
+            <!-- Popular Destinations -->
+            <div id="tab-popular" class="megamenu-destinations__panel megamenu-destinations__popular" aria-hidden="false" bis_skin_checked="1">
+                <ul id="tab-popular-list" class="tab-list" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; list-style: none; padding: 0; margin: 0 0 24px 0;">
+                    <li class="group">
+                        <a class="megamenu-destinations__card" href="/es/esim-alemania/" title="eSIM en Alemania" bis_skin_checked="1" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111; transition: box-shadow 0.2s;">
+                            <div class="megamenu-destinations__flags" bis_skin_checked="1" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;">
+                                <img width="24" height="24" src="https://media.holafly.com/public/flags/DEU.svg" alt="Alemania" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                            </div>
+                            <span class="megamenu-destinations__text" style="font-weight: 400; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Alemania</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a class="megamenu-destinations__card" href="/es/esim-usa/" title="eSIM en Estados Unidos" bis_skin_checked="1" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111; transition: box-shadow 0.2s;">
+                            <div class="megamenu-destinations__flags" bis_skin_checked="1" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;">
+                                <img width="24" height="24" src="https://media.holafly.com/public/flags/USA.svg" alt="Estados Unidos" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                            </div>
+                            <span class="megamenu-destinations__text" style="font-weight: 400; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Estados Unidos</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a class="megamenu-destinations__card" href="/es/esim-turquia/" title="eSIM en Turquía" bis_skin_checked="1" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111; transition: box-shadow 0.2s;">
+                            <div class="megamenu-destinations__flags" bis_skin_checked="1" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;">
+                                <img width="24" height="24" src="https://media.holafly.com/public/flags/TUR.svg" alt="Turquía" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                            </div>
+                            <span class="megamenu-destinations__text" style="font-weight: 400; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Turquía</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a class="megamenu-destinations__card" href="/es/esim-emiratos-arabes/" title="eSIM en Emiratos Árabes" bis_skin_checked="1" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111; transition: box-shadow 0.2s;">
+                            <div class="megamenu-destinations__flags" bis_skin_checked="1" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;">
+                                <img width="24" height="24" src="https://media.holafly.com/public/flags/ARE.svg" alt="Emiratos Árabes" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                            </div>
+                            <span class="megamenu-destinations__text" style="font-weight: 400; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Emiratos Árabes</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a class="megamenu-destinations__card" href="/es/esim-egipto/" title="eSIM en Egipto" bis_skin_checked="1" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111; transition: box-shadow 0.2s;">
+                            <div class="megamenu-destinations__flags" bis_skin_checked="1" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;">
+                                <img width="24" height="24" src="https://media.holafly.com/public/flags/EGY.svg" alt="Egipto" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                            </div>
+                            <span class="megamenu-destinations__text" style="font-weight: 400; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Egipto</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a class="megamenu-destinations__card" href="/es/esim-suiza/" title="eSIM en Suiza" bis_skin_checked="1" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111; transition: box-shadow 0.2s;">
+                            <div class="megamenu-destinations__flags" bis_skin_checked="1" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;">
+                                <img width="24" height="24" src="https://media.holafly.com/public/flags/CHE.svg" alt="Suiza" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                            </div>
+                            <span class="megamenu-destinations__text" style="font-weight: 400; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Suiza</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a class="megamenu-destinations__card" href="/es/esim-tailandia/" title="eSIM en Tailandia" bis_skin_checked="1" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111; transition: box-shadow 0.2s;">
+                            <div class="megamenu-destinations__flags" bis_skin_checked="1" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;">
+                                <img width="24" height="24" src="https://media.holafly.com/public/flags/THA.svg" alt="Tailandia" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                            </div>
+                            <span class="megamenu-destinations__text" style="font-weight: 400; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Tailandia</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a class="megamenu-destinations__card" href="/es/esim-china/" title="eSIM en China" bis_skin_checked="1" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111; transition: box-shadow 0.2s;">
+                            <div class="megamenu-destinations__flags" bis_skin_checked="1" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;">
+                                <img width="24" height="24" src="https://media.holafly.com/public/flags/CHN.svg" alt="China" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                            </div>
+                            <span class="megamenu-destinations__text" style="font-weight: 400; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">China</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a class="megamenu-destinations__card" href="/es/esim-mexico/" title="eSIM en México" bis_skin_checked="1" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111; transition: box-shadow 0.2s;">
+                            <div class="megamenu-destinations__flags" bis_skin_checked="1" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;">
+                                <img width="24" height="24" src="https://media.holafly.com/public/flags/MEX.svg" alt="México" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                            </div>
+                            <span class="megamenu-destinations__text" style="font-weight: 400; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">México</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a class="megamenu-destinations__card" href="/es/esim-reino-unido/" title="eSIM en Reino Unido" bis_skin_checked="1" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111; transition: box-shadow 0.2s;">
+                            <div class="megamenu-destinations__flags" bis_skin_checked="1" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;">
+                                <img width="24" height="24" src="https://media.holafly.com/public/flags/GBR.svg" alt="Reino Unido" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                            </div>
+                            <span class="megamenu-destinations__text" style="font-weight: 400; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Reino Unido</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a class="megamenu-destinations__card" href="/es/esim-marruecos/" title="eSIM en Marruecos" bis_skin_checked="1" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111; transition: box-shadow 0.2s;">
+                            <div class="megamenu-destinations__flags" bis_skin_checked="1" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;">
+                                <img width="24" height="24" src="https://media.holafly.com/public/flags/MAR.svg" alt="Marruecos" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                            </div>
+                            <span class="megamenu-destinations__text" style="font-weight: 400; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Marruecos</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a class="megamenu-destinations__card" href="/es/esim-asia/" title="eSIM en Asia" bis_skin_checked="1" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111; transition: box-shadow 0.2s;">
+                            <div class="megamenu-destinations__flags" bis_skin_checked="1" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;">
+                                <img width="24" height="24" src="https://media.holafly.com/public/flags/ASI.svg" alt="Asia" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                            </div>
+                            <span class="megamenu-destinations__text" style="font-weight: 400; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Asia</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Regional Destinations placeholder -->
+            <div id="tab-regional" class="megamenu-destinations__panel megamenu-destinations__regional" aria-hidden="true" bis_skin_checked="1" style="display: none;">
+                <ul id="tab-regional-list" class="tab-list" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; list-style: none; padding: 0; margin: 0 0 24px 0;">
+                    <!-- Regional Cards -->
+                    <li class="group"><a class="megamenu-destinations__card" href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;"><div class="megamenu-destinations__flags" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;"><img width="24" height="24" src="https://media.holafly.com/public/flags/AFR.svg" alt="África"></div><span style="font-size: 14px;">África</span></a></li>
+                    <li class="group"><a class="megamenu-destinations__card" href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;"><div class="megamenu-destinations__flags" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;"><img width="24" height="24" src="https://media.holafly.com/public/flags/CAM.svg" alt="America Central"></div><span style="font-size: 14px;">America Central</span></a></li>
+                    <li class="group"><a class="megamenu-destinations__card" href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;"><div class="megamenu-destinations__flags" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;"><img width="24" height="24" src="https://media.holafly.com/public/flags/SAM.svg" alt="América Latina"></div><span style="font-size: 14px;">América Latina</span></a></li>
+                    <li class="group"><a class="megamenu-destinations__card" href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;"><div class="megamenu-destinations__flags" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;"><img width="24" height="24" src="https://media.holafly.com/public/flags/ASI.svg" alt="Asia"></div><span style="font-size: 14px;">Asia</span></a></li>
+                    <li class="group"><a class="megamenu-destinations__card" href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;"><div class="megamenu-destinations__flags" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;"><img width="24" height="24" src="https://media.holafly.com/public/flags/EUR.svg" alt="Balcanes"></div><span style="font-size: 14px;">Balcanes</span></a></li>
+                    <li class="group"><a class="megamenu-destinations__card" href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;"><div class="megamenu-destinations__flags" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;"><img width="24" height="24" src="https://media.holafly.com/public/flags/CRB.svg" alt="Caribe"></div><span style="font-size: 14px;">Caribe</span></a></li>
+                    <li class="group"><a class="megamenu-destinations__card" href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;"><div class="megamenu-destinations__flags" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;"><img width="24" height="24" src="https://media.holafly.com/public/flags/ASI.svg" alt="China+HongKong+Macao"></div><span style="font-size: 14px;">China+HongKong+Macao</span></a></li>
+                    <li class="group"><a class="megamenu-destinations__card" href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;"><div class="megamenu-destinations__flags" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;"><img width="24" height="24" src="https://media.holafly.com/public/flags/EUR.svg" alt="Escandinavia"></div><span style="font-size: 14px;">Escandinavia</span></a></li>
+                    <li class="group"><a class="megamenu-destinations__card" href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;"><div class="megamenu-destinations__flags" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;"><img width="24" height="24" src="https://media.holafly.com/public/flags/EUR.svg" alt="Europa"></div><span style="font-size: 14px;">Europa</span></a></li>
+                    <li class="group"><a class="megamenu-destinations__card" href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;"><div class="megamenu-destinations__flags" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;"><img width="24" height="24" src="https://media.holafly.com/public/flags/EUR.svg" alt="Europa del Este"></div><span style="font-size: 14px;">Europa del Este</span></a></li>
+                    <li class="group"><a class="megamenu-destinations__card" href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;"><div class="megamenu-destinations__flags" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;"><img width="24" height="24" src="https://media.holafly.com/public/flags/ASI.svg" alt="Japón y China"></div><span style="font-size: 14px;">Japón y China</span></a></li>
+                    <li class="group"><a class="megamenu-destinations__card" href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;"><div class="megamenu-destinations__flags" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid #f3f4f6;"><img width="24" height="24" src="https://media.holafly.com/public/flags/ASI.svg" alt="Japón y Corea del Sur"></div><span style="font-size: 14px;">Japón y Corea del Sur</span></a></li>
+                </ul>
+            </div>
+
+            <!-- All Destinations placeholder -->
+            <div id="tab-all" class="megamenu-destinations__panel megamenu-destinations__all" aria-hidden="true" bis_skin_checked="1" style="display: none;">
+                <ul id="tab-all-list" class="tab-list" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; list-style: none; padding: 0; margin: 0 0 24px 0;">
+                    <li class="group"><a class="megamenu-destinations__card" href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; color: #111;"><span style="font-size: 14px; margin-left: 8px;">Ver todos los destinos del mundo</span></a></li>
+                </ul>
+            </div>
+            
+        </div>
+
+        <div class="megamenu-destinations__footer-cta" bis_skin_checked="1" style="width: 100%;">
+            <a href="shop.html" class="btn primary-conversion megamenu-destinations__button" aria-disabled="false" bis_skin_checked="1" style="display: block; width: 100%; background: #3EE17A; color: #111; text-align: center; padding: 14px 0; border-radius: 8px; text-decoration: none; font-weight: 500; font-size: 16px; transition: background 0.2s;">
+                <span class="label">Explorar Destinos</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var menu = document.getElementById('megaMenuContainer');
+    var overlay = document.getElementById('megaMenuDarkOverlay');
+    var closeBtn = document.getElementById('close_megamenu');
+    
+    function openMenu(e) {
+        if(e) e.preventDefault();
+        menu.style.display = 'block';
+        overlay.style.display = 'block';
+    }
+    
+    function closeMenu() {
+        menu.style.display = 'none';
+        overlay.style.display = 'none';
+    }
+    
+    // Attach to Destinos links
+    var destinosLinks = document.querySelectorAll('li[data-attribute="megamenu"] a, a[title="¿A dónde viajas después?"]');
+    destinosLinks.forEach(function(link) {
+        link.addEventListener('click', openMenu);
+    });
+    
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    if (overlay) overlay.addEventListener('click', closeMenu);
+
+    // Tabs logic
+    var btns = {
+        'Popular': { btn: document.getElementById('btn-popular'), panel: document.getElementById('tab-popular') },
+        'Regional': { btn: document.getElementById('btn-regional'), panel: document.getElementById('tab-regional') },
+        'All': { btn: document.getElementById('btn-all'), panel: document.getElementById('tab-all') }
+    };
+
+    function setActiveTab(tabName) {
+        Object.keys(btns).forEach(function(key) {
+            var item = btns[key];
+            if (!item.btn || !item.panel) return;
+            
+            var checkmark = item.btn.querySelector('.checkmark');
+            
+            if (key === tabName) {
+                item.btn.style.background = '#111';
+                item.btn.style.color = 'white';
+                item.btn.style.border = 'none';
+                if(checkmark) checkmark.style.display = 'inline';
+                item.panel.style.display = 'block';
+            } else {
+                item.btn.style.background = 'white';
+                item.btn.style.color = '#555';
+                item.btn.style.border = '1px solid #e5e7eb';
+                if(checkmark) checkmark.style.display = 'none';
+                item.panel.style.display = 'none';
+            }
+        });
+    }
+
+    if (btns['Popular'].btn) btns['Popular'].btn.addEventListener('click', function() { setActiveTab('Popular'); });
+    if (btns['Regional'].btn) btns['Regional'].btn.addEventListener('click', function() { setActiveTab('Regional'); });
+    if (btns['All'].btn) btns['All'].btn.addEventListener('click', function() { setActiveTab('All'); });
+
+    // Search logic
+    var searchInput = document.getElementById('searchInput-ylueg34');
+    var clearSearchBtn = document.getElementById('clearSearchBtn');
+    var searchMinChars = document.getElementById('search-min-chars');
+    var searchResultsContainer = document.getElementById('search-results-container');
+    var megamenuContent = document.getElementById('megamenu-destinations__content');
+
+    function handleSearch() {
+        var val = searchInput.value.trim();
+        
+        if (val.length > 0) {
+            clearSearchBtn.style.display = 'inline';
+        } else {
+            clearSearchBtn.style.display = 'none';
+        }
+
+        if (val.length === 0) {
+            // Empty state -> show tabs
+            searchMinChars.style.display = 'none';
+            searchResultsContainer.style.display = 'none';
+            megamenuContent.style.display = 'block';
+        } else if (val.length > 0 && val.length < 3) {
+            // Typing state (<3)
+            searchMinChars.style.display = 'block';
+            searchResultsContainer.style.display = 'none';
+            megamenuContent.style.display = 'none';
+        } else if (val.length >= 3) {
+            // Results state
+            searchMinChars.style.display = 'none';
+            searchResultsContainer.style.display = 'block';
+            megamenuContent.style.display = 'none';
+        }
+    }
+
+    if(searchInput) {
+        searchInput.addEventListener('input', handleSearch);
+    }
+    
+    if(clearSearchBtn) {
+        clearSearchBtn.addEventListener('click', function() {
+            if(searchInput) {
+                searchInput.value = '';
+                handleSearch();
+            }
+        });
+    }
+
+});
+</script>
